@@ -1,8 +1,11 @@
 import React from "react";
+import Header from "./Header";
 
 function App() {
   return (
-      <h1>Money Maker!</h1>
+	  <React.Fragment>
+		  <Header />
+	  </React.Fragment>
   );
 }
 
