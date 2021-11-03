@@ -15,8 +15,9 @@ function CurrencyList(props) {
 						<Currency
 							whenCurrencyClicked={props.onCurrencySelection}
 							name={currency.name}
-							price={currency.price}
+							description={currency.description}
 							country={currency.country}
+							price={parseFloat(currency.price)}
 							id={currency.id}
 							key={currency.id} />
 					)}

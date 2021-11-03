@@ -7,16 +7,21 @@ function Currency(props) {
 			<div onClick={() => props.whenCurrencyClicked(props.id)}>
 				<h3>{props.name}</h3>
 			</div>
+			<p><i>{props.description}</i></p>
+			<p>Origin: {props.country}</p>
+			<br />
+			<p>Conversion rate: $ {props.price}</p>
 		</div>
 	)
 }
 
 Currency.propTypes = {
 	name: PropTypes.string.isRequired,
-	price: PropTypes.number.isRequired,
+	description: PropTypes.string,
 	country: PropTypes.string,
-	id: PropTypes.string,
-	whenCurrencyClicked: PropTypes.func
+	price: PropTypes.number.isRequired,
+	whenCurrencyClicked: PropTypes.func,
+	id: PropTypes.string
 }
 
 export default Currency;
