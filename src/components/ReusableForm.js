@@ -7,23 +7,27 @@ function ReusableForm(props) {
 			<input
 				type="text"
 				name="name"
+				required="true"
 				placeholder="Currency name"/>
 			<br />
 			<textarea
 				name="description"
+				required="true"
 				placeholder="Describe it"/>
 			<br />
 			<input
 				type="text"
 				name="country"
+				required="true"
 				placeholder="Country of origin"/>
 			<br />
 			$ <input
 				type="number"
-				min="0.01"
-				step="0.01"
+				min="0.001"
+				step="0.001"
 				name="price"
-				placeholder="Price (in USD)"/>
+				required="true"
+				placeholder="Conversion rate"/>
 			<br />
 			<button type="submit">{props.buttonText}</button>
 		</form>
