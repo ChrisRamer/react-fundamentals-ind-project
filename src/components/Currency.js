@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 
 function Currency(props) {
 	return (
-		<div onClick = {() => props.whenCurrencyClicked(props.id)}>
-			<h3>{props.name}</h3>
+		<div id="currency_section" className="panel grid-item">
+			<div onClick={() => props.whenCurrencyClicked(props.id)}>
+				<h3>{props.name}</h3>
+			</div>
 		</div>
 	)
 }

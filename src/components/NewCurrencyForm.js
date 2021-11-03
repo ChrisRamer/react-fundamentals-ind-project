@@ -15,9 +15,12 @@ function NewCurrencyForm(props) {
 	}
 
 	return (
-		<ReusableForm
-			formSubmissionHandler={handelNewCurrencyFormSubmission}
-			buttonText="Add currency" />
+		<React.Fragment>
+			<h3>Add new currency</h3>
+			<ReusableForm
+				formSubmissionHandler={handelNewCurrencyFormSubmission}
+				buttonText="Add currency" />
+		</React.Fragment>
 	)
 }
 
