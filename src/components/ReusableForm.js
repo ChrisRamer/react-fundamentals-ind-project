@@ -9,6 +9,10 @@ function ReusableForm(props) {
 				name="name"
 				placeholder="Currency name"/>
 			<br />
+			<textarea
+				name="description"
+				placeholder="Describe it"/>
+			<br />
 			<input
 				type="text"
 				name="country"
