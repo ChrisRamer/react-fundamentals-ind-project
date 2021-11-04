@@ -18,6 +18,8 @@ function CurrencyList(props) {
 							description={currency.description}
 							country={currency.country}
 							price={parseFloat(currency.price)}
+							quantity={5}
+							handleClickBuy={props.onCurrencyBought}
 							id={currency.id}
 							key={currency.id} />
 					)}
@@ -29,7 +31,8 @@ function CurrencyList(props) {
 
 CurrencyList.propTypes = {
 	currencyList: PropTypes.array,
-	onCurrencySelection: PropTypes.func
+	onCurrencySelection: PropTypes.func,
+	onCurrencyBought: PropTypes.func
 }
 
 export default CurrencyList;

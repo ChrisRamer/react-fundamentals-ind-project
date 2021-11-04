@@ -47,6 +47,11 @@ class CurrencyControl extends React.Component {
 		this.setState({selectedCurrency: selectedCurrency});
 	}
 
+	handleCurrencyPurchase = () =>
+	{
+		console.log("Bought currency!");
+	}
+
 	render() {
 		let currentlyVisibleState = null;
 		let buttonText = null;
@@ -60,7 +65,7 @@ class CurrencyControl extends React.Component {
 			currentlyVisibleState = <NewCurrencyForm onNewCurrencyCreation={this.handleAddingNewCurrencyToList} />;
 			buttonText = "Return to currency list";
 		} else {
-			currentlyVisibleState = <CurrencyList currencyList={this.state.masterCurrencyList} onCurrencySelection={this.handleChangingSelectedCurrency} />;
+			currentlyVisibleState = <CurrencyList currencyList={this.state.masterCurrencyList} onCurrencySelection={this.handleChangingSelectedCurrency} onCurrencyBought={this.handleCurrencyPurchase} />;
 			buttonText = "Add new currency";
 		}
 
