@@ -1,13 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+function getRandomCurrencyValue() {
+	return Math.floor(Math.random() * 50);
+}
+
 function Currency(props) {
 	let ownedCount = 0;
 	const outOfStock = props.quantity < 1;
 	const stockText = !outOfStock ? props.quantity + " in stock" : "out of stock";
 	const stockTextColor = !outOfStock ? "green" : "red";
 	const restockBtn = !outOfStock ? null : <button type="submit">Restock</button>;
-	const buyBtn =  !outOfStock ? <button type="submit" onClick={props.handleClickBuy}>Buy 1</button> : null;
+	const buyBtn =  !outOfStock ? <button type="submit" onClick={() => props.handleClickBuy(props.price, getRandomCurrencyValue())}>Buy 1</button> : null;
 
 	return (
 		<div id="currency_section" className="panel grid-item">
@@ -44,6 +48,8 @@ Currency.propTypes = {
 	quantity: PropTypes.number.isRequired,
 	whenCurrencyClicked: PropTypes.func.isRequired,
 	handleClickBuy: PropTypes.func.isRequired,
+	moneyToSpend: PropTypes.number,
+	totalEarnings: PropTypes.number,
 	id: PropTypes.string
 }
 

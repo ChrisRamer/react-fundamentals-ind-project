@@ -112,3 +112,7 @@ a {
 #right-corner {
 	margin-right: 1em;
 }
+
+#status_section {
+	margin: 0 auto;
+}

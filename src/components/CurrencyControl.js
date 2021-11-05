@@ -2,12 +2,15 @@ import React from "react";
 import NewCurrencyForm from "./NewCurrencyForm";
 import CurrencyList from "./CurrencyList";
 import CurrencyDetail from "./CurrencyDetail";
+import Status from "./Status";
 
 class CurrencyControl extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			formVisibleOnPage: false,
+			moneyToSpend: 100,
+			totalEarnings: 0,
 			masterCurrencyList: [],
 			selectedCurrency: null
 		};
@@ -47,9 +50,14 @@ class CurrencyControl extends React.Component {
 		this.setState({selectedCurrency: selectedCurrency});
 	}
 
-	handleCurrencyPurchase = () =>
-	{
-		console.log("Bought currency!");
+	handleCurrencyPurchase = (amountSpent, currencyValue) => {
+		const moneyToSpend = this.state.moneyToSpend - amountSpent;
+		const totalEarnings = this.state.totalEarnings + currencyValue;
+
+		this.setState({
+			moneyToSpend: moneyToSpend,
+			totalEarnings: totalEarnings
+		});
 	}
 
 	render() {
@@ -65,13 +73,16 @@ class CurrencyControl extends React.Component {
 			currentlyVisibleState = <NewCurrencyForm onNewCurrencyCreation={this.handleAddingNewCurrencyToList} />;
 			buttonText = "Return to currency list";
 		} else {
-			currentlyVisibleState = <CurrencyList currencyList={this.state.masterCurrencyList} onCurrencySelection={this.handleChangingSelectedCurrency} onCurrencyBought={this.handleCurrencyPurchase} />;
+			currentlyVisibleState = <CurrencyList currencyList={this.state.masterCurrencyList} onCurrencySelection={this.handleChangingSelectedCurrency} onCurrencyBought={this.handleCurrencyPurchase} moneyToSpend={this.state.moneyToSpend} totalEarnings={this.state.totalEarnings} />;
 			buttonText = "Add new currency";
 		}
 
 		return (
 			<React.Fragment>
+				<Status moneyToSpend={this.state.moneyToSpend} totalEarnings={this.state.totalEarnings} />
+				<br />
 				{currentlyVisibleState}
+				<br />
 				<button onClick={this.handleClick}>{buttonText}</button>
 			</React.Fragment>
 		);
