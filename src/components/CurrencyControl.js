@@ -11,6 +11,7 @@ class CurrencyControl extends React.Component {
 			formVisibleOnPage: false,
 			moneyToSpend: 100,
 			totalEarnings: 0,
+			quantity: 5,
 			masterCurrencyList: [],
 			selectedCurrency: null
 		};
@@ -53,10 +54,12 @@ class CurrencyControl extends React.Component {
 	handleCurrencyPurchase = (amountSpent, currencyValue) => {
 		const moneyToSpend = this.state.moneyToSpend - amountSpent;
 		const totalEarnings = this.state.totalEarnings + currencyValue;
+		const quantity = this.state.quantity - 1;
 
 		this.setState({
 			moneyToSpend: moneyToSpend,
-			totalEarnings: totalEarnings
+			totalEarnings: totalEarnings,
+			quantity: quantity
 		});
 	}
 
@@ -73,7 +76,7 @@ class CurrencyControl extends React.Component {
 			currentlyVisibleState = <NewCurrencyForm onNewCurrencyCreation={this.handleAddingNewCurrencyToList} />;
 			buttonText = "Return to currency list";
 		} else {
-			currentlyVisibleState = <CurrencyList currencyList={this.state.masterCurrencyList} onCurrencySelection={this.handleChangingSelectedCurrency} onCurrencyBought={this.handleCurrencyPurchase} moneyToSpend={this.state.moneyToSpend} totalEarnings={this.state.totalEarnings} />;
+			currentlyVisibleState = <CurrencyList currencyList={this.state.masterCurrencyList} onCurrencySelection={this.handleChangingSelectedCurrency} onCurrencyBought={this.handleCurrencyPurchase} moneyToSpend={this.state.moneyToSpend} totalEarnings={this.state.totalEarnings} quantity={this.state.quantity} />;
 			buttonText = "Add new currency";
 		}
 

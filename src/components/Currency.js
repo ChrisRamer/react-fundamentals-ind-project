@@ -2,11 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function getRandomCurrencyValue() {
-	return Math.floor(Math.random() * 50);
+	return Math.floor(Math.random() * 25);
 }
 
 function Currency(props) {
-	let ownedCount = 0;
 	const outOfStock = props.quantity < 1;
 	const stockText = !outOfStock ? props.quantity + " in stock" : "out of stock";
 	const stockTextColor = !outOfStock ? "green" : "red";
@@ -26,9 +25,6 @@ function Currency(props) {
 					<b style={{ color: stockTextColor }}>{stockText}</b>
 					<br></br>
 					{restockBtn}
-				</div>
-				<div id="middle">
-					<i>You own {ownedCount}</i>
 				</div>
 				<div id="right-corner">
 					<b>${props.price}</b>

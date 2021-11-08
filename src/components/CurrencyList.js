@@ -18,7 +18,7 @@ function CurrencyList(props) {
 							description={currency.description}
 							country={currency.country}
 							price={parseFloat(currency.price)}
-							quantity={5}
+							quantity={props.quantity}
 							handleClickBuy={props.onCurrencyBought}
 							moneyToSpend={props.moneyToSpend}
 							totalEarnings={props.totalEarnings}
@@ -36,7 +36,8 @@ CurrencyList.propTypes = {
 	onCurrencySelection: PropTypes.func,
 	onCurrencyBought: PropTypes.func,
 	moneyToSpend: PropTypes.number,
-	totalEarnings: PropTypes.number
+	totalEarnings: PropTypes.number,
+	quantity: PropTypes.number,
 }
 
 export default CurrencyList;
