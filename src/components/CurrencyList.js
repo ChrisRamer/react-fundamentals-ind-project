@@ -17,7 +17,6 @@ function CurrencyList(props) {
 							name={currency.name}
 							description={currency.description}
 							country={currency.country}
-							price={parseFloat(currency.price)}
 							quantity={props.quantity}
 							handleClickBuy={props.onCurrencyBought}
 							moneyToSpend={props.moneyToSpend}

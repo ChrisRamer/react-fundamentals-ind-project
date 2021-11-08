@@ -5,12 +5,17 @@ function getRandomCurrencyValue() {
 	return Math.floor(Math.random() * 25);
 }
 
+function getRandomCurrencyPrice() {
+	return Math.floor(Math.random() * 35);
+}
+
 function Currency(props) {
+	const price = getRandomCurrencyPrice();
 	const outOfStock = props.quantity < 1;
 	const stockText = !outOfStock ? props.quantity + " in stock" : "out of stock";
 	const stockTextColor = !outOfStock ? "green" : "red";
 	const restockBtn = !outOfStock ? null : <button type="submit">Restock</button>;
-	const buyBtn =  !outOfStock ? <button type="submit" onClick={() => props.handleClickBuy(props.price, getRandomCurrencyValue())}>Buy 1</button> : null;
+	const buyBtn =  !outOfStock ? <button type="submit" onClick={() => props.handleClickBuy(price, getRandomCurrencyValue())}>Buy 1</button> : null;
 
 	return (
 		<div id="currency_section" className="panel grid-item">
@@ -27,7 +32,7 @@ function Currency(props) {
 					{restockBtn}
 				</div>
 				<div id="right-corner">
-					<b>${props.price}</b>
+					<b>${price}</b>
 					<br></br>
 					{buyBtn}
 				</div>
@@ -40,7 +45,6 @@ Currency.propTypes = {
 	name: PropTypes.string.isRequired,
 	description: PropTypes.string,
 	country: PropTypes.string,
-	price: PropTypes.number.isRequired,
 	quantity: PropTypes.number.isRequired,
 	whenCurrencyClicked: PropTypes.func.isRequired,
 	handleClickBuy: PropTypes.func.isRequired,

@@ -21,14 +21,6 @@ function ReusableForm(props) {
 				required={true}
 				placeholder="Country of origin"/>
 			<br />
-			$ <input
-				type="number"
-				min="0.001"
-				step="0.001"
-				name="price"
-				required={true}
-				placeholder="Conversion rate"/>
-			<br />
 			<button type="submit">{props.buttonText}</button>
 		</form>
 	)

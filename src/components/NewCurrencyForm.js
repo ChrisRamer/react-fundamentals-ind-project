@@ -10,7 +10,6 @@ function NewCurrencyForm(props) {
 			name: event.target.name.value,
 			country: event.target.country.value,
 			description: event.target.description.value,
-			price: event.target.price.value,
 			id: v4()
 		});
 	}
