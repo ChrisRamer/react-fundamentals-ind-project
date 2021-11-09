@@ -17,10 +17,11 @@ function CurrencyList(props) {
 							name={currency.name}
 							description={currency.description}
 							country={currency.country}
-							quantity={props.quantity}
+							quantity={currency.quantity}
 							handleClickBuy={props.onCurrencyBought}
 							moneyToSpend={props.moneyToSpend}
 							totalEarnings={props.totalEarnings}
+							currencyObj={currency}
 							id={currency.id}
 							key={currency.id} />
 					)}
@@ -36,7 +37,7 @@ CurrencyList.propTypes = {
 	onCurrencyBought: PropTypes.func,
 	moneyToSpend: PropTypes.number,
 	totalEarnings: PropTypes.number,
-	quantity: PropTypes.number,
+	quantity: PropTypes.number
 }
 
 export default CurrencyList;

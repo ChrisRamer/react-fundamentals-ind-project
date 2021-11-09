@@ -9,6 +9,7 @@ function CurrencyDetail(props) {
 			<h1>Currency Detail</h1>
 			<h3>{currency.name}</h3>
 			<p>Country of origin: {currency.country}</p>
+			<p>Quantity: {currency.quantity}</p>
 			<button onClick={() => onClickingDelete(currency.id)}>Delete currency</button>
 			<hr />
 		</React.Fragment>

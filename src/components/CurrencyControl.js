@@ -51,15 +51,18 @@ class CurrencyControl extends React.Component {
 		this.setState({selectedCurrency: selectedCurrency});
 	}
 
-	handleCurrencyPurchase = (amountSpent, currencyValue) => {
+	handleCurrencyPurchase = (amountSpent, currencyValue, id, currencyObj) => {
+		const newCurrency = { ...currencyObj, quantity: currencyObj.quantity - 1 };
+		const newCurrencyList = this.state.masterCurrencyList
+			.filter(currency => currency.id !== id)
+			.concat(newCurrency);
 		const moneyToSpend = this.state.moneyToSpend - amountSpent;
 		const totalEarnings = this.state.totalEarnings + currencyValue;
-		const quantity = this.state.quantity - 1;
 
 		this.setState({
 			moneyToSpend: moneyToSpend,
 			totalEarnings: totalEarnings,
-			quantity: quantity
+			masterCurrencyList: newCurrencyList
 		});
 	}
 
@@ -76,7 +79,7 @@ class CurrencyControl extends React.Component {
 			currentlyVisibleState = <NewCurrencyForm onNewCurrencyCreation={this.handleAddingNewCurrencyToList} />;
 			buttonText = "Return to currency list";
 		} else {
-			currentlyVisibleState = <CurrencyList currencyList={this.state.masterCurrencyList} onCurrencySelection={this.handleChangingSelectedCurrency} onCurrencyBought={this.handleCurrencyPurchase} moneyToSpend={this.state.moneyToSpend} totalEarnings={this.state.totalEarnings} quantity={this.state.quantity} />;
+			currentlyVisibleState = <CurrencyList currencyList={this.state.masterCurrencyList} onCurrencySelection={this.handleChangingSelectedCurrency} onCurrencyBought={this.handleCurrencyPurchase} moneyToSpend={this.state.moneyToSpend} totalEarnings={this.state.totalEarnings} />;
 			buttonText = "Add new currency";
 		}
 
