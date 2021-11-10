@@ -32,6 +32,8 @@ Add a new currency by clicking "add new currency" and submitting that form.
 * **Input:** Click delete button on a currency's details view
 * **Output:** Removes the currency from the list
 
+## Component Tree
+
 ![Component tree](https://github.com/ChrisRamer/react-fundamentals-ind-project/blob/master/Diagram.png)
 
 ## Technologies Used
