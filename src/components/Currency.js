@@ -10,8 +10,8 @@ function getRandomCurrencyPrice() {
 }
 
 function Currency(props) {
-	const price = getRandomCurrencyPrice();
 	const outOfStock = props.quantity < 1;
+	const price = !outOfStock ? getRandomCurrencyPrice() : "";
 	const stockText = !outOfStock ? props.quantity + " in stock" : "out of stock";
 	const stockTextColor = !outOfStock ? "green" : "red";
 	const buyBtn =  !outOfStock && props.moneyToSpend >= price ? <button type="submit" onClick={() => props.handleClickBuy(price, getRandomCurrencyValue(), props.id, props.currencyObj)}>Buy 1</button> : null;
