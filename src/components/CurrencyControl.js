@@ -52,10 +52,12 @@ class CurrencyControl extends React.Component {
 	}
 
 	handleCurrencyPurchase = (amountSpent, currencyValue, id, currencyObj) => {
-		const newCurrency = { ...currencyObj, quantity: currencyObj.quantity - 1 };
-		const newCurrencyList = this.state.masterCurrencyList
-			.filter(currency => currency.id !== id)
-			.concat(newCurrency);
+		const oldCurrency = this.state.masterCurrencyList.filter(currency => currency.id === id)[0];
+		const oldCurrencyIndex = this.state.masterCurrencyList.indexOf(oldCurrency);
+		const newCurrency = { ...oldCurrency, quantity: currencyObj.quantity - 1 };
+		const newCurrencyList = this.state.masterCurrencyList;
+		newCurrencyList[oldCurrencyIndex] = newCurrency;
+
 		const moneyToSpend = this.state.moneyToSpend - amountSpent;
 		const totalEarnings = this.state.totalEarnings + currencyValue;
 
