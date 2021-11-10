@@ -11,7 +11,7 @@ Note that earnings is not actual profit, I didn't bother being accurate there.
 
 ## Setup/Installation Requirements
 
-Clone this repo and the [API repo](https://github.com/ChrisRamer/building-an-api-ind-project-api).
+Clone this repo.
 
 Open the Terminal and run the command `npm start` to start the live server.
 
