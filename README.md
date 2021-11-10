@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# *Money Maker*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### *Money Maker, 11/10/2021*
 
-## Available Scripts
+#### By **Chris Ramer**
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+An application that allows you to spend money to earn money. The prices and values of the curries are randomized each time the component is loaded.
+Note that earnings is not actual profit, I didn't bother being accurate there.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup/Installation Requirements
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clone this repo and the [API repo](https://github.com/ChrisRamer/building-an-api-ind-project-api).
 
-### `npm test`
+Open the Terminal and run the command `npm start` to start the live server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Add a new currency by clicking "add new currency" and submitting that form.
 
-### `npm run build`
+## Specs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **Spec:** Clicking on a currency's name shows the currency's details
+* **Input:** Click on currency name
+* **Output:** Shows details for that currency
+* **Spec:** Clicking the buy button below the currency's price purchases 1 of that currency and deducts its cost from your total money and increases your earnings and reduces the stock of that currency by 1
+* **Input:** Click buy on currency costing $10 with value of $20 while you have $100 to spend
+* **Output:** Reduces the stock by 1, leaves you with $90 left to spend but with $20 additional earnings
+* **Spec:** When a currency's stock is depleted, stock text says "out of stock"
+* **Input:** Buy last stock of a currency
+* **Output:** Stock text updates to say "out of stock"
+* **Spec:** Deleting a currency deletes the currency (shocking!)
+* **Input:** Click delete button on a currency's details view
+* **Output:** Removes the currency from the list
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* React
+* JavaScript
+* NPM
 
-### `npm run eject`
+### License
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Copyright (c) 2021 **Chris Ramer**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This software is licensed under the MIT license.
