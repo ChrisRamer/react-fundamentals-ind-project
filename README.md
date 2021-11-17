@@ -13,7 +13,9 @@ Note that earnings is not actual profit, I didn't bother being accurate there.
 
 Clone this repo.
 
-Open the Terminal and run the command `npm start` to start the live server.
+Open the Terminal and run the command `npm install` to install the necessary packages.
+
+With packages installed, run the command `npm start` to start the live server.
 
 Add a new currency by clicking "add new currency" and submitting that form.
 
