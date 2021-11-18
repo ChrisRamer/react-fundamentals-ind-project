@@ -17,25 +17,25 @@ function Currency(props) {
 	const buyBtn =  !outOfStock && props.moneyToSpend >= price ? <button type="submit" onClick={() => props.handleClickBuy(price, getRandomCurrencyValue(), props.id, props.currencyObj)}>Buy 1</button> : null;
 
 	return (
-		<div id="currency_section" className="panel grid-item">
+		<div className="panel grid-item">
 			<div onClick={() => props.whenCurrencyClicked(props.id)}>
 				<h3>{props.name}</h3>
 			</div>
 			<p><i>{props.description}</i></p>
 			<p>Origin: {props.country}</p>
 			<br />
-			<div id="bottom-row">
-				<div id="left-corner">
+			<div className="bottom-row">
+				<div className="left-corner">
 					<b style={{ color: stockTextColor }}>{stockText}</b>
 				</div>
-				<div id="right-corner">
+				<div className="right-corner">
 					<b>${price}</b>
 					<br></br>
 					{buyBtn}
 				</div>
 			</div>
 		</div>
-	)
+	);
 }
 
 Currency.propTypes = {

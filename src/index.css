@@ -95,21 +95,21 @@ a {
 	color:rgb(153, 109, 255)
 }
 
-#bottom-row {
+.bottom-row {
 	display: flex;
 	justify-content: space-between;
 }
 
-#left-corner {
+.left-corner {
 	margin-left: 1em;
 }
 
-#middle {
+.middle {
 	margin-right: 1.75em;
 	color: grey;
 }
 
-#right-corner {
+.right-corner {
 	margin-right: 1em;
 }
 
